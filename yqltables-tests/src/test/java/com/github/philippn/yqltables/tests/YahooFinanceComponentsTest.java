@@ -37,8 +37,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 public class YahooFinanceComponentsTest {
 
 	public static final String TABLE_DEFINTION = 
-			"https://raw.githubusercontent.com/philippn/stock-assist/master/"
-			+ "pom/tables/yahoo.finance.components.xml";
+			"https://raw.githubusercontent.com/philippn/yql-tables/master/"
+			+ "yahoo.finance.components.xml";
 
 	private YqlClient client;
 
