@@ -107,7 +107,7 @@
     var url = "http://finance.yahoo.com/q?s="+symbol;
     var quoteQuery = y.query(
 	"select * from html " +
-	"where url=@url and " +
+	"where url=@url and compat='html5' and " +
 	"xpath='" +
 	"//meta[@property=\"og:title\"] | " +
 	"//span[@class=\"rtq_exch\"]'" ,
