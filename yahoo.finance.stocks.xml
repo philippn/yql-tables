@@ -39,7 +39,7 @@
 	    return false;
 	
 	var companyName = results.meta.@content.toString().trim();
-	var market = results.span.toString().trim();
+	var market = results.span.text().toString().trim();
 	stock.appendChild(<CompanyName>{companyName}</CompanyName>);
 	stock.appendChild(<Market>{market}</Market>);
 	return true;
