@@ -17,6 +17,7 @@ package com.github.philippn.yqltables.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
@@ -69,5 +70,6 @@ public class YahooFinanceStocksTest {
 		assertEquals("XETRA", stock.getMarket());
 		assertEquals("Financial", stock.getSector());
 		assertEquals("Property & Casualty Insurance", stock.getIndustry());
+		assertTrue(stock.getFullTimeEmployees() > 0);
 	}
 }

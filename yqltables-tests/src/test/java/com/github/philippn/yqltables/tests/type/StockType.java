@@ -27,9 +27,9 @@ public class StockType {
 
 	private String symbol;
 	private String companyName;
+	private String market;
 	private Date start;
 	private Date end;
-	private String market;
 	private String sector;
 	private String industry;
 	private int fullTimeEmployees;
@@ -64,6 +64,21 @@ public class StockType {
 	}
 
 	/**
+	 * @return the market
+	 */
+	public String getMarket() {
+		return market;
+	}
+
+	/**
+	 * @param market the market to set
+	 */
+	@JsonProperty("Market")
+	public void setMarket(String market) {
+		this.market = market;
+	}
+
+	/**
 	 * @return the start
 	 */
 	public Date getStart() {
@@ -89,21 +104,6 @@ public class StockType {
 	 */
 	public void setEnd(Date end) {
 		this.end = end;
-	}
-
-	/**
-	 * @return the market
-	 */
-	public String getMarket() {
-		return market;
-	}
-
-	/**
-	 * @param market the market to set
-	 */
-	@JsonProperty("Market")
-	public void setMarket(String market) {
-		this.market = market;
 	}
 
 	/**
