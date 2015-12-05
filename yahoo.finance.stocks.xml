@@ -74,7 +74,7 @@
 	    return false;
 	for each (var tr in results.tr){
 	    //Remove trailing colon, and strip whitespace
-	    var property = tr.td[0].p.text()
+	    var property = tr.td[0].text()
 		.toString().slice(0, -1)
 		.replace(/\s+/g, "");
 	    switch (property.toLowerCase()) {
@@ -83,11 +83,15 @@
 		    break;
 		case 'fulltimeemployees':
 		    //Strip commas
-		    value = tr.td[1].*.text().toString().replace(/,/g, "");
+		    value = tr.td[1].text().toString().replace(/,/g, "");
 		    break;
 		default:
 		    //Convert whitespace to single space
-		    value = tr.td[1].*.text().toString().replace(/\s+/g, " ");
+		    if (tr.td[1].a) {
+		    	value = tr.td[1].a.text().toString().replace(/\s+/g, " ");
+		    } else {
+		    	value = tr.td[1].text().toString().replace(/\s+/g, " ");
+		    }
 		    break;
 	    }
 	    stock.appendChild(<{property}>{value}</{property}>);
@@ -100,7 +104,7 @@
     var profileQuery = y.query(
 	"select * from html " +
 	"where url=@url and " + 
-	"xpath='//table[@class=\"yfnc_datamodoutline1\"]/tr/td/table/tr' " +
+	"xpath='//table[@class=\"yfnc_datamodoutline1\"]/tbody/tr/td/table/tbody/tr' " +
 	"limit 4",
 	{url:url});
 
